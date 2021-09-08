@@ -51,3 +51,11 @@ if(BUILD_TESTS)
 endif(BUILD_TESTS)
 
 include(${CMAKE_SOURCE_DIR}/cmake/cmake_package.cmake)
+
+set(prefix ${CMAKE_INSTALL_PREFIX})
+set(exec_prefix ${CMAKE_INSTALL_PREFIX})
+set(libdir ${CMAKE_INSTALL_PREFIX}/lib)
+set(includedir ${CMAKE_INSTALL_PREFIX}/include)
+set(PACKAGE_VERSION 0.38.4)
+configure_file(pixman-1.pc.in pixman-1.pc @ONLY)
+install(FILES ${CMAKE_BINARY_DIR}/pixman-1.pc DESTINATION ${libdir}/pkgconfig )
